@@ -1,10 +1,37 @@
-namespace CalculatorApp;
-
-public class Calculator
+namespace CalculatorApp
 {
-    public double PerformOperation(double num1, double num2, string operation)
+    public class Calculator
     {
-        // TODO: Implement the PerformOperation method
-        throw new NotImplementedException();
+        public double PerformOperation(double num1, double num2, string operation)
+        {
+
+
+
+            switch (operation)
+            {
+                case "add":
+                    return num1 + num2;
+
+                case "subtract":
+                    return num1 - num2;
+
+                case "multiply":
+                    return num1 * num2;
+
+                case "divide":
+                    if (num2 == 0)
+                    {
+                        throw new DivideByZeroException("Cannot divide by zero.");
+                    }
+                    return num1 / num2;
+
+                default:
+                    throw new InvalidOperationException("The specified operation is not supported.");
+            }
+        }
+
+
     }
+
+
 }
