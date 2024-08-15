@@ -1,4 +1,5 @@
 using NUnit.Framework;
+using static CalculatorApp.LoggerProvider;
 
 namespace CalculatorApp.UnitTests
 {
@@ -10,7 +11,7 @@ namespace CalculatorApp.UnitTests
         [SetUp]
         public void SetUp()
         {
-            _calculator = new Calculator();
+            _calculator = new Calculator(CreateLogger<Calculator>());
         }
 
         [TestCase(3, 5, "add")]
